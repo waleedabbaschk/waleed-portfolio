@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --color-cream: #f5f1e8;
+  --color-ink: #12121f;
+}
+
+html {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* clip (hidden nahi): sticky positioning kaam karti rehti hai */
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
+/* Keyboard users ke liye saaf focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }

@@ -1,0 +1,6 @@
+{
+  "title": "This portfolio",
+  "description": "A custom, scroll-driven portfolio with a talking avatar that introduces me as you scroll. Built from scratch instead of a template.",
+  "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "GSAP", "Lenis"],
+  "link": ""
+}

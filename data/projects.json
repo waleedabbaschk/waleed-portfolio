@@ -1,0 +1,41 @@
+[
+  {
+    "id": "semester-vault",
+    "title": "SemesterVault",
+    "shortDescription": "Your semester, organized.",
+    "description": "A study organizer for university students: every subject, folder, book and slide in one place, with search, favorites and a daily streak. Built with UET Taxila students in mind.",
+    "highlights": [
+      "Subjects and folders for every course",
+      "Search, favorites and recent files",
+      "Books and slides sections",
+      "A study diary and daily streak"
+    ],
+    "image": "/projects/semester-vault.png",
+    "github": "",
+    "live": "https://semestervaultuettexilla.netlify.app/",
+    "technologies": [],
+    "category": "Education",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "ak-home-delivery",
+    "title": "AK Home Delivery",
+    "shortDescription": "A delivery website for a local business in Chakwal.",
+    "description": "A real-world delivery website for a local business in Chakwal. Customers browse restaurant menus and daily deals, shop daily essentials, or request any item they need, with fast local delivery.",
+    "highlights": [
+      "Restaurants and daily deals",
+      "Menu, products and daily essentials",
+      "Home services through WhatsApp",
+      "Order tracking",
+      "Delivery across Chakwal"
+    ],
+    "image": "/projects/ak-home-delivery.png",
+    "github": "",
+    "live": "https://www.akhomedelivery.com/",
+    "technologies": [],
+    "category": "Local business · Web",
+    "featured": true,
+    "order": 2
+  }
+]

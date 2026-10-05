@@ -1,0 +1,34 @@
+{
+  "name": "Waleed Abbas",
+  "roles": ["Full Stack Developer", "AI Agent Maker", "Cybersecurity (Learning)"],
+  "tagline": "I build agents, full websites and apps.",
+  "education": "BS Computer Science, UET Taxila",
+  "about": "I'm a Computer Science student at UET Taxila who builds real software. I make full-stack web apps, AI-powered agents, and automation workflows, and I'm steadily moving into cybersecurity. I like shipping things, breaking them, and learning how they work underneath.",
+  "whatIDo": [
+    {
+      "title": "Full Stack Development",
+      "description": "Complete web apps, from the interface to the server and database."
+    },
+    {
+      "title": "AI Automation & Agents",
+      "description": "Agents and workflows that do repetitive work so people don't have to."
+    },
+    {
+      "title": "Cybersecurity",
+      "description": "Learning how systems get attacked so I can build ones that hold up."
+    }
+  ],
+  "details": [
+    { "label": "Role", "value": "Full Stack Developer" },
+    { "label": "Focus", "value": "AI Agents & Automation" },
+    { "label": "Studying", "value": "BS Computer Science" },
+    { "label": "University", "value": "UET Taxila" },
+    { "label": "Learning", "value": "Cybersecurity" }
+  ],
+  "quote": "Build, understand, improve, deploy, document, repeat.",
+  "email": "waleedabbas.dev@gmail.com",
+  "whatsapp": "03719455944",
+  "github": "https://github.com/waleedabbaschk",
+  "instagram": "https://instagram.com/malikwaleed.abbas",
+  "linkedin": ""
+}

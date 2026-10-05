@@ -1,0 +1,50 @@
+[
+  {
+    "id": "python-advanced",
+    "title": "Advanced Python",
+    "note": "OOP, APIs and automation, then NumPy, Pandas and FastAPI.",
+    "status": "learning"
+  },
+  {
+    "id": "c-cpp",
+    "title": "C & C++",
+    "note": "Programming fundamentals through my university coursework.",
+    "status": "learning"
+  },
+  {
+    "id": "react-typescript",
+    "title": "React & TypeScript",
+    "note": "Component architecture, state management, performance and advanced types.",
+    "status": "learning"
+  },
+  {
+    "id": "networking",
+    "title": "Networking",
+    "note": "IP, TCP/UDP, HTTP, DNS, NAT and firewalls, learned practically.",
+    "status": "learning"
+  },
+  {
+    "id": "linux",
+    "title": "Linux",
+    "note": "Terminal, Bash, permissions, processes, SSH and logs.",
+    "status": "exploring"
+  },
+  {
+    "id": "web-security",
+    "title": "Web security",
+    "note": "Authentication security, OWASP and vulnerability assessment.",
+    "status": "exploring"
+  },
+  {
+    "id": "ai-agents-rag",
+    "title": "AI agents & RAG",
+    "note": "Tool-using agents and retrieval-based applications.",
+    "status": "exploring"
+  },
+  {
+    "id": "ethical-hacking",
+    "title": "Ethical hacking",
+    "note": "Authorized, lab-based pentesting, working toward red teaming.",
+    "status": "future"
+  }
+]

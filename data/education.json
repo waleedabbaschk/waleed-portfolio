@@ -1,0 +1,29 @@
+[
+  {
+    "id": "school",
+    "level": "School",
+    "title": "Govt. School 01",
+    "place": "Chakwal",
+    "detail": "",
+    "score": "94%",
+    "current": false
+  },
+  {
+    "id": "college",
+    "level": "College",
+    "title": "Royal College of Sciences",
+    "place": "Chakwal",
+    "detail": "ICS",
+    "score": "89%",
+    "current": false
+  },
+  {
+    "id": "uet",
+    "level": "University",
+    "title": "UET Taxila",
+    "place": "Taxila",
+    "detail": "BS Computer Science",
+    "score": "",
+    "current": true
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "hafiz",
+    "title": "Hafiz-e-Quran",
+    "type": "Achievement",
+    "description": "Memorized the entire Quran.",
+    "icon": "book"
+  },
+  {
+    "id": "school-awards",
+    "title": "School awards",
+    "type": "Awards",
+    "description": "Awards and certificates earned during my school years.",
+    "icon": "award"
+  },
+  {
+    "id": "college-awards",
+    "title": "College awards",
+    "type": "Awards",
+    "description": "Awards and certificates earned during my college years.",
+    "icon": "certificate"
+  }
+]
