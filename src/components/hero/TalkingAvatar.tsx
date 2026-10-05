@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { RefObject } from 'react'
+import { createPortal } from 'react-dom'
 import gsap from 'gsap'
 import { voiceClock } from '../../lib/voiceClock'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -25,6 +26,8 @@ export default function TalkingAvatar({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const toggleRef = useRef<() => void>(() => {})
   const [sound, setSound] = useState<SoundState>('locked')
+  const [pinned, setPinned] = useState(true) // hero abhi pinned/dikh raha hai?
+  const [canPlay, setCanPlay] = useState(true) // reduced-motion mein awaaz hi nahi
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -61,6 +64,7 @@ export default function TalkingAvatar({
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setSound('muted')
+      setCanPlay(false)
       return
     }
 
@@ -166,9 +170,11 @@ export default function TalkingAvatar({
       end: 'bottom bottom',
       onUpdate: (self) => {
         progress = Math.min(1, self.progress / HOLD_AT)
+        setPinned(self.progress < 1)
       },
     })
     progress = Math.min(1, st.progress / HOLD_AT)
+    setPinned(st.progress < 1)
 
     const vis = ScrollTrigger.create({
       trigger: triggerEl,
@@ -189,12 +195,15 @@ export default function TalkingAvatar({
     }
     syncState()
 
+    // Browser ijazat de (jaise pehle engage ho chuka visitor) to khud awaaz on karne ki koshish
+    actx.resume().catch(() => {})
+
     const unlock = (e: Event) => {
       const el = e.target as Element | null
       if (el && el.closest && el.closest('[data-sound-toggle]')) return
       void actx.resume()
     }
-    const events = ['pointerdown', 'keydown', 'touchend'] as const
+    const events = ['pointerdown', 'keydown', 'touchend', 'click'] as const
     events.forEach((ev) => window.addEventListener(ev, unlock, { passive: true }))
 
     toggleRef.current = () => {
@@ -221,7 +230,11 @@ export default function TalkingAvatar({
   }, [trigger])
 
   const label =
-    sound === 'locked' ? '\u{1F50A} Enable sound' : sound === 'on' ? '\u{1F50A} Sound on' : '\u{1F507} Muted'
+    sound === 'locked'
+      ? '\u{1F50A} Tap to turn on sound'
+      : sound === 'on'
+        ? '\u{1F50A} Sound on - tap to mute'
+        : '\u{1F507} Muted - tap to unmute'
 
   return (
     <div className="relative h-full w-full">
@@ -233,17 +246,23 @@ export default function TalkingAvatar({
         aria-label="Animated 3D avatar of Waleed Abbas introducing himself as you scroll"
         className="h-full w-full"
       />
-      <button
-        type="button"
-        data-sound-toggle
-        onClick={() => toggleRef.current()}
-        aria-pressed={sound === 'on'}
-        className={`absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink px-4 py-2 text-xs font-medium text-cream transition hover:scale-105 ${
-          sound === 'locked' ? 'animate-pulse' : ''
-        }`}
-      >
-        {label}
-      </button>
+      {/* Portal: nav ke peeche na chhupe, aur kisi transform wale parent se fixed na bigre */}
+      {canPlay &&
+        pinned &&
+        createPortal(
+          <button
+            type="button"
+            data-sound-toggle
+            onClick={() => toggleRef.current()}
+            aria-pressed={sound === 'on'}
+            className={`fixed left-6 top-20 z-10 max-w-[calc(100vw-3rem)] whitespace-nowrap rounded-full bg-ink px-4 py-2.5 text-xs font-medium text-cream shadow-lg transition hover:scale-105 md:bottom-8 md:left-12 md:top-auto ${
+              sound === 'locked' ? 'animate-pulse' : ''
+            }`}
+          >
+            {label}
+          </button>,
+          document.body,
+        )}
     </div>
   )
 }
