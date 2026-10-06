@@ -127,7 +127,7 @@ export default function Contact() {
           </ul>
         </div>
 
-        <footer className="mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 py-8 text-sm text-neutral-500">
+        <footer className="mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pb-24 pt-8 text-sm text-neutral-500">
           <p>
             &copy; {new Date().getFullYear()} {profile.name}
           </p>

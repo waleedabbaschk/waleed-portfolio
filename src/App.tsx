@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Nav from './components/ui/Nav'
+import AskWaleed from './components/ui/AskWaleed'
 import Hero from './components/hero/Hero'
 import About from './components/sections/About'
 import Skills from './components/sections/Skills'
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <>
       <Nav />
+      <AskWaleed />
       <main>
         <Hero />
         <About />

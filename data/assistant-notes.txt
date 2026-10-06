@@ -1,0 +1,19 @@
+# Extra facts for the "Ask Waleed" chat. One fact per line. Lines starting with # are ignored.
+# Keep this file SHORT: it is sent with every question and the free Groq plan has a small token limit.
+# Only write things that are true. The chat repeats this as fact.
+
+Positioning: Full Stack Developer and AI Automation Engineer. He also calls himself an AI Agent Maker. He builds web apps, AI agents, automation workflows and practical software.
+Career goal: Full Stack Developer + AI Automation Engineer + AI Agent Developer. He wants to work online and remotely, and move step by step toward AI-powered apps (LLM apps, RAG, SaaS).
+Studies: BS Computer Science at UET Taxila, currently in Semester 1. Matric 1123/1200. FSc 1066/1200 at Royal College of Sciences Chakwal. School: Govt. School 01, Chakwal.
+How he works: he learns by building real projects and uses AI-assisted development tools to move faster. He likes clean, responsive UI and affordable, practical solutions.
+Tools he uses: VS Code, VSCodium, Cursor, Git, GitHub, Vercel, Supabase, n8n, Node.js, Python (also FastAPI and PyQt6) and AI coding tools.
+Services he is building: business websites, landing pages, portfolio sites, React and full-stack web apps; AI chatbot integration, AI assistants and agents, LLM integration, RAG apps; n8n and business automation (lead generation, email, customer-support replies, CRM, API integrations, WhatsApp automation); Python scripts and desktop utilities; video editing (reels, short videos, YouTube, promos).
+Video editing and tech content are secondary skills. His main focus is software development and AI automation.
+Content projects: WALEED BEATS (music/content) and NextGen Coders (Python, AI and technology content).
+Cybersecurity: he is interested only in legal, defensive security (fundamentals, networking, Linux, web security). He does not do illegal hacking.
+Project ideas (concepts only, NOT finished or live): AI Law Assistant for Pakistan (AI research helper for lawyers, not legal advice) and Student AI Tutor (AI study helper with an affordable student plan).
+AutoTypeMaster (also called AutoCodeTyper): a Python + PyQt6 desktop utility that types or pastes code/text from a clipboard queue, with function-key shortcuts.
+SemesterVault was earlier called StudentVault. It is a study organizer for UET Taxila students (subjects, books, slides, links and study material in one place).
+AK Home Delivery is a local delivery business in Chakwal (food, groceries, daily essentials, medicine, custom orders). Waleed built the website only. He is not the owner and does not handle orders or delivery. Orders must go to the business directly: https://www.akhomedelivery.com/
+Pricing: no prices are published. Waleed confirms the price after discussing the requirements (pages, features, integrations, AI, backend, deadline).
+Contact: email waleedabbas.dev@gmail.com, WhatsApp 03719455944, GitHub https://github.com/waleedabbaschk, portfolio https://malikwaleedabbas.vercel.app
