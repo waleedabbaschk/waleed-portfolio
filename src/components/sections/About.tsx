@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,9 +8,21 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+// Back of the ID card ("What I am"). Everything here comes from facts already on the site.
+const backItems = [
+  { title: profile.roles[0], note: 'React \u00b7 Node.js \u00b7 REST APIs' },
+  { title: profile.roles[1], note: 'n8n \u00b7 AI APIs \u00b7 Agents' },
+  { title: 'Cybersecurity learner', note: 'Ethical, lab-based only' },
+  { title: 'CS student', note: profile.education },
+  { title: 'Hafiz-e-Quran', note: 'Memorized the entire Quran' },
+]
+
+const CARD_SHADOW = 'shadow-[0_30px_60px_-30px_rgba(18,18,31,0.4)]'
+
 export default function About() {
   const wrap = useRef<HTMLElement>(null)
   const card = useRef<HTMLDivElement>(null)
+  const [flipped, setFlipped] = useState(false)
 
   const sway = () => {
     if (!card.current) return
@@ -79,7 +91,7 @@ export default function About() {
   const facts = [
     { label: 'ID No', value: 'WA-0001' },
     { label: 'Dept', value: 'Comp. Science' },
-    { label: 'Focus', value: 'AI · Web' },
+    { label: 'Focus', value: 'AI \u00b7 Web' },
   ]
 
   return (
@@ -140,7 +152,7 @@ export default function About() {
                 <div className="absolute bottom-full left-0 h-24 w-full bg-ink" />
                 <div className="absolute inset-0 flex justify-center overflow-hidden">
                   <span className="block whitespace-nowrap text-[7px] font-semibold uppercase leading-6 tracking-[0.35em] text-cream/55 [writing-mode:vertical-rl]">
-                    {'WALEED · '.repeat(12)}
+                    {'WALEED \u00b7 '.repeat(12)}
                   </span>
                 </div>
                 <div className="absolute inset-y-0 left-[3px] w-px bg-cream/30" />
@@ -174,61 +186,141 @@ export default function About() {
                 <rect x="16" y="29" width="12" height="15" rx="4" fill="url(#clipTan)" />
               </svg>
 
-              {/* Card */}
-              <div className="overflow-hidden rounded-2xl border border-black/10 bg-[#fbfaf6] shadow-[0_30px_60px_-30px_rgba(18,18,31,0.4)]">
-                <div className="flex items-center gap-3 bg-ink px-5 pb-4 pt-8 text-cream">
-                  <span className="grid size-8 place-items-center rounded-full border border-cream/30 text-[10px] font-semibold">
-                    WA
-                  </span>
-                  <div className="leading-tight">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em]">Developer ID</p>
-                    <p className="mt-0.5 text-[10px] text-cream/60">UET Taxila</p>
-                  </div>
-                </div>
+              {/* Card: flips on hover (mouse), tap (touch) or Enter/Space (keyboard).
+                  The hover area is this fixed-size box, so it does not flicker while the card turns. */}
+              <div
+                role="button"
+                tabIndex={0}
+                aria-pressed={flipped}
+                aria-label="Developer ID card. Hover, tap, or press Enter to flip it."
+                className={`id-scene ${flipped ? 'id-flipped' : ''}`}
+                onPointerEnter={(e) => {
+                  if (e.pointerType === 'mouse') setFlipped(true)
+                }}
+                onPointerLeave={(e) => {
+                  if (e.pointerType === 'mouse') setFlipped(false)
+                }}
+                onPointerUp={(e) => {
+                  if (e.pointerType !== 'mouse') setFlipped((f) => !f)
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setFlipped((f) => !f)
+                  }
+                }}
+              >
+                <div className="id-flip relative">
+                  {/* Front */}
+                  <div
+                    aria-hidden={flipped}
+                    className={`id-face overflow-hidden rounded-2xl border border-black/10 bg-[#fbfaf6] ${CARD_SHADOW}`}
+                  >
+                    <div className="flex items-center gap-3 bg-ink px-5 pb-4 pt-8 text-cream">
+                      <span className="grid size-8 place-items-center rounded-full border border-cream/30 text-[10px] font-semibold">
+                        WA
+                      </span>
+                      <div className="leading-tight">
+                        <p className="text-xs font-bold uppercase tracking-[0.18em]">Developer ID</p>
+                        <p className="mt-0.5 text-[10px] text-cream/60">UET Taxila</p>
+                      </div>
+                    </div>
 
-                <div className="px-6 pb-5 pt-5">
-                  <div className="mx-auto w-[68%] rounded-2xl border border-black/20 p-1.5">
-                    <div className="aspect-[4/5] overflow-hidden rounded-xl bg-[#e9e2d0]">
-                      <img
-                        src="/hero/photo-hero.jpg" loading="lazy" decoding="async"
-                        alt="Portrait of Waleed Abbas"
-                        className="h-full w-full object-cover object-top"
-                      />
+                    <div className="px-6 pb-5 pt-5">
+                      <div className="mx-auto w-[68%] rounded-2xl border border-black/20 p-1.5">
+                        <div className="aspect-[4/5] overflow-hidden rounded-xl bg-[#e9e2d0]">
+                          <img
+                            src="/hero/photo-hero.jpg" loading="lazy" decoding="async"
+                            alt="Portrait of Waleed Abbas"
+                            className="h-full w-full object-cover object-top"
+                          />
+                        </div>
+                      </div>
+
+                      <p className="mt-4 text-center text-sm font-bold uppercase tracking-[0.14em]">
+                        {profile.name}
+                      </p>
+                      <p className="mt-0.5 text-center text-[11px] text-neutral-500">{profile.roles[0]}</p>
+
+                      <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-black/10 pt-4">
+                        {facts.map((f) => (
+                          <div key={f.label}>
+                            <dt className="text-[8px] uppercase tracking-[0.2em] text-neutral-400">
+                              {f.label}
+                            </dt>
+                            <dd className="mt-0.5 text-[11px] font-semibold leading-tight">{f.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+
+                      <div className="mt-5 flex items-end justify-between gap-4">
+                        <div
+                          aria-hidden="true"
+                          className="h-7 flex-1 rounded-sm opacity-70"
+                          style={{
+                            backgroundImage:
+                              'repeating-linear-gradient(90deg, #12121f 0 2px, transparent 2px 5px, #12121f 5px 6px, transparent 6px 10px)',
+                          }}
+                        />
+                        <span
+                          aria-hidden="true"
+                          className="size-5 shrink-0 rounded-full border-2 border-black/20"
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  <p className="mt-4 text-center text-sm font-bold uppercase tracking-[0.14em]">
-                    {profile.name}
-                  </p>
-                  <p className="mt-0.5 text-center text-[11px] text-neutral-500">{profile.roles[0]}</p>
-
-                  <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-black/10 pt-4">
-                    {facts.map((f) => (
-                      <div key={f.label}>
-                        <dt className="text-[8px] uppercase tracking-[0.2em] text-neutral-400">
-                          {f.label}
-                        </dt>
-                        <dd className="mt-0.5 text-[11px] font-semibold leading-tight">{f.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-
-                  <div className="mt-5 flex items-end justify-between gap-4">
-                    <div
-                      aria-hidden="true"
-                      className="h-7 flex-1 rounded-sm opacity-70"
-                      style={{
-                        backgroundImage:
-                          'repeating-linear-gradient(90deg, #12121f 0 2px, transparent 2px 5px, #12121f 5px 6px, transparent 6px 10px)',
-                      }}
-                    />
+                  {/* Back */}
+                  <div
+                    aria-hidden={!flipped}
+                    className={`id-face id-back absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-[#fbfaf6] px-6 pb-6 pt-5 ${CARD_SHADOW}`}
+                  >
                     <span
                       aria-hidden="true"
-                      className="size-5 shrink-0 rounded-full border-2 border-black/20"
+                      className="mx-auto h-2.5 w-14 shrink-0 rounded-full border border-black/10 bg-[#e9e2d0]"
                     />
+                    <p className="mt-6 text-xl font-bold tracking-tight">What I am</p>
+
+                    <ul className="mt-4 space-y-3.5">
+                      {backItems.map((item) => (
+                        <li key={item.title} className="flex items-start gap-3">
+                          <span
+                            aria-hidden="true"
+                            className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-ink text-cream"
+                          >
+                            <svg
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="size-3"
+                            >
+                              <path d="m2.5 6.2 2.2 2.2 4.8-4.9" />
+                            </svg>
+                          </span>
+                          <div className="min-w-0 leading-tight">
+                            <p className="text-sm font-semibold">{item.title}</p>
+                            <p className="mt-0.5 text-[11px] text-neutral-500">{item.note}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto pt-6">
+                      <p className="font-serif text-4xl italic leading-none">Waleed</p>
+                      <p className="mt-2 break-all font-mono text-[9px] tracking-wide text-neutral-400">
+                        {profile.email}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <p className="mt-4 text-center text-[10px] uppercase tracking-[0.25em] text-neutral-400">
+                Hover or tap to flip
+              </p>
             </div>
           </div>
 

@@ -44,3 +44,29 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .chat-pop { animation: none; }
 }
+
+/* About: ID card flip (front/back turn around the vertical axis) */
+.id-scene {
+  perspective: 1400px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.id-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.id-flipped .id-flip {
+  transform: rotateY(180deg);
+}
+.id-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.id-back {
+  transform: rotateY(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .id-flip {
+    transition: none;
+  }
+}
