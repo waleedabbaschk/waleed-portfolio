@@ -61,7 +61,7 @@ export default function Contact() {
       ref={wrap}
       className="border-t border-black/5 bg-[linear-gradient(180deg,#faf8f2_0%,#f7f4ea_100%)]"
     >
-      <div className="mx-auto max-w-[1800px] px-6 pt-24 md:px-12 xl:px-[5vw]">
+      <div className="mx-auto max-w-[1800px] px-6 pt-16 md:px-12 md:pt-24 xl:px-[5vw]">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] xl:gap-[5vw]">
           <div>
             <p className="contact-reveal flex items-center text-xs uppercase tracking-[0.3em] text-neutral-500">
