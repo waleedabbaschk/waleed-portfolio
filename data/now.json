@@ -1,6 +1,6 @@
 {
-  "title": "This portfolio",
-  "description": "A custom, scroll-driven portfolio with a talking avatar that introduces me as you scroll. Built from scratch instead of a template.",
-  "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "GSAP", "Lenis"],
+  "title": "Ask Waleed: AI chat for this portfolio",
+  "description": "I'm building an AI chat for this portfolio that answers questions about my projects, skills and education, powered by the Groq API through a secure server-side function so the API key never reaches the browser.",
+  "technologies": ["Groq API", "React", "TypeScript", "Vercel Functions"],
   "link": ""
 }
