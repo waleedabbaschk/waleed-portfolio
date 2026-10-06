@@ -1,5 +1,24 @@
 [
   {
+    "id": "ielts-pte-expert",
+    "title": "IELTS & PTE Expert",
+    "shortDescription": "A professional website for an IELTS and PTE trainer.",
+    "description": "A professional website for Atta ur Rehman, an IELTS and PTE trainer. It presents his courses and student results, and makes it easy for visitors to book a free demo or reach him on WhatsApp.",
+    "highlights": [
+      "Courses and student results sections",
+      "Book Free Demo call to action",
+      "Floating WhatsApp chat button",
+      "Credentials-first hero (MPhil English Linguistics)"
+    ],
+    "image": "/projects/ielts-pte-expert.webp",
+    "github": "",
+    "live": "https://ielts-pte-expert.vercel.app",
+    "technologies": [],
+    "category": "Education \u00b7 Web",
+    "featured": true,
+    "order": 1
+  },
+  {
     "id": "semester-vault",
     "title": "SemesterVault",
     "shortDescription": "Your semester, organized.",
@@ -16,7 +35,7 @@
     "technologies": [],
     "category": "Education",
     "featured": true,
-    "order": 1
+    "order": 2
   },
   {
     "id": "ak-home-delivery",
@@ -34,8 +53,8 @@
     "github": "",
     "live": "https://www.akhomedelivery.com/",
     "technologies": [],
-    "category": "Local business · Web",
+    "category": "Local business \u00b7 Web",
     "featured": true,
-    "order": 2
+    "order": 3
   }
 ]
