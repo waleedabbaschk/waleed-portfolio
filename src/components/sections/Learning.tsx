@@ -80,20 +80,26 @@ export default function Learning() {
             </ul>
           </div>
 
-          {/* Right: rows */}
+          {/* Right: rows. Each row has its own dark bar behind the text:
+              on hover it wipes in from the left; when you leave it shrinks back
+              from the right edge toward the left. */}
           <ul className="learn-list">
             {learning.map((item, i) => {
               const s = STATUS[item.status]
               return (
                 <li
                   key={item.id}
-                  className="learn-row group flex items-center gap-5 rounded-xl border-b border-black/10 px-4 py-5 transition-colors duration-300 hover:bg-ink hover:text-cream md:gap-8 md:px-6 xl:py-6"
+                  className="learn-row group relative isolate flex items-center gap-5 rounded-xl border-b border-black/10 px-4 py-5 transition-colors duration-150 delay-200 hover:text-cream hover:delay-[15ms] hover:duration-[110ms] md:gap-8 md:px-6 xl:py-6"
                 >
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -z-10 rounded-xl bg-ink transition-[clip-path] duration-300 ease-in-out [clip-path:inset(0_100%_0_0_round_0.75rem)] group-hover:delay-[30ms] group-hover:duration-200 group-hover:ease-out group-hover:[clip-path:inset(0_0_0_0_round_0.75rem)] motion-reduce:transition-none"
+                  />
                   <span className="w-8 shrink-0 text-xs opacity-50">{pad(i + 1)}</span>
 
                   <div className="min-w-0 flex-1">
                     <p className="text-lg font-semibold tracking-tight xl:text-2xl">{item.title}</p>
-                    <p className="mt-1 text-sm text-neutral-500 transition-colors duration-300 group-hover:text-cream/70 xl:text-base">
+                    <p className="mt-1 text-sm text-neutral-500 transition-colors duration-150 delay-200 group-hover:text-cream/70 group-hover:delay-[15ms] group-hover:duration-[110ms] xl:text-base">
                       {item.note}
                     </p>
                     <span className="mt-3 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] sm:hidden">

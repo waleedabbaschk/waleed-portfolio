@@ -1,5 +1,25 @@
 [
   {
+    "id": "uet-vault",
+    "title": "UET Vault",
+    "shortDescription": "Every note, slide and book. One place.",
+    "description": "A free study hub for UET Taxila computer science students. Notes, slides, books, assignments and past papers are organised by semester and subject, and every file can be previewed in the browser or downloaded in one click. No login, no ads.",
+    "highlights": [
+      "Semester and subject pages (Semester 1 has 9 subjects)",
+      "Preview PDFs in the browser or download them",
+      "Library page with search by title",
+      "Notes, slides, books, assignments and past papers",
+      "No login, no ads, works on phones"
+    ],
+    "image": "/projects/uet-vault.webp",
+    "github": "",
+    "live": "",
+    "technologies": [],
+    "category": "Education \u00b7 Web",
+    "featured": true,
+    "order": 0
+  },
+  {
     "id": "ielts-pte-expert",
     "title": "IELTS & PTE Expert",
     "shortDescription": "A professional website for an IELTS and PTE trainer.",
