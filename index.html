@@ -59,34 +59,77 @@
       #splash.is-done{opacity:0;visibility:hidden;transform:scale(1.02)}
       #splash::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 50% 48%,rgba(244,236,196,.9),rgba(245,241,232,0) 70%)}
       #splash>*{position:relative}
-      .sp-ghost{position:absolute !important;left:0;right:0;top:50%;margin:0;transform:translateY(-62%);text-align:center;white-space:nowrap;font-size:10.5vw;font-weight:800;letter-spacing:-.04em;line-height:1;color:rgba(18,18,31,.055);user-select:none}
-      .sp-stage{height:min(48svh,460px);aspect-ratio:221/644;perspective:900px}
-      .sp-char{display:block;width:100%;height:100%;transform-origin:50% 92%;animation:sp-sway 3.4s ease-in-out infinite;will-change:transform}
-      .sp-shadow{width:min(46vw,190px);height:16px;margin-top:-8px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(18,18,31,.3),rgba(18,18,31,0) 70%);animation:sp-shadow 3.4s ease-in-out infinite}
-      .sp-name{width:min(84vw,580px);margin:1.1rem 0 0}
-      .sp-write{display:block;width:100%;height:auto;overflow:visible;color:#12121f}
-      .sp-nib{fill:currentColor;stroke:none;opacity:0;transition:opacity .45s ease;filter:drop-shadow(0 0 5px rgba(18,18,31,.35))}
-      .sp-bar{width:min(58vw,250px);height:2px;margin-top:1.1rem;overflow:hidden;border-radius:2px;background:rgba(18,18,31,.12)}
+      .sp-scene{display:block;width:min(96vw,620px);height:auto;max-height:62svh;overflow:visible}
+      .sp-write{color:#12121f}
+      .sp-nib{fill:#12121f;stroke:none;opacity:0;transition:opacity .35s ease}
+      .sp-bar{width:min(58vw,250px);height:2px;margin-top:1.2rem;overflow:hidden;border-radius:2px;background:rgba(18,18,31,.12)}
       .sp-bar span{display:block;width:100%;height:100%;background:#12121f;transform-origin:left;transform:scaleX(0)}
       .sp-pct{margin:.8rem 0 0;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#737373;font-variant-numeric:tabular-nums}
       .sp-pct b{font-weight:500}
-      @keyframes sp-sway{0%,100%{transform:translateY(0) rotateY(-12deg)}50%{transform:translateY(-10px) rotateY(12deg)}}
-      @keyframes sp-shadow{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.82);opacity:.7}}
-      @media (prefers-reduced-motion:reduce){.sp-char,.sp-shadow{animation:none}#splash{transition:none}}
+      @media (prefers-reduced-motion:reduce){#splash{transition:none}}
     </style>
     <!-- splash-css:end -->
   </head>
   <body>
     <!-- splash:start -->
     <div id="splash" role="status" aria-live="polite" aria-label="Loading the Malikwaleed portfolio">
-      <p class="sp-ghost" aria-hidden="true">MALIKWALEED</p>
-      <div class="sp-stage" aria-hidden="true">
-        <img class="sp-char" src="/hero/desktop/frame-001.webp" width="221" height="644" alt="" decoding="async" fetchpriority="high" />
-      </div>
-      <div class="sp-shadow" aria-hidden="true"></div>
-      <div class="sp-name" aria-hidden="true">
-        <svg class="sp-write" viewBox="0 0 491.8 79.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.1 29.2C16.1 28.7 12.5 27.7 11.0 26.2C9.5 24.7 8.5 21.6 8.0 20.1C7.5 18.6 7.5 18.6 8.0 17.1C8.5 15.6 9.5 12.5 11.0 11.0C12.5 9.5 15.6 8.5 17.1 8.0C18.6 7.5 18.6 7.5 20.1 8.0C21.6 8.5 24.7 9.5 26.2 11.0C27.7 12.5 28.7 15.1 29.2 17.1C29.7 19.1 29.7 19.6 29.2 23.2C28.7 26.7 28.2 30.2 26.2 38.3C24.2 46.4 18.6 66.1 17.1 71.6"/><path d="M23.2 50.4C24.7 46.4 29.7 32.2 32.2 26.2C34.8 20.1 36.8 16.6 38.3 14.1C39.8 11.5 39.8 12.0 41.3 11.0C42.8 10.0 45.9 8.5 47.4 8.0C48.9 7.5 48.9 7.5 50.4 8.0C51.9 8.5 55.0 9.5 56.5 11.0C58.0 12.5 59.0 15.1 59.5 17.1C60.0 19.1 60.0 19.6 59.5 23.2C59.0 26.7 58.5 30.2 56.5 38.3C54.5 46.4 48.9 66.1 47.4 71.6"/><path d="M53.5 50.4C55.0 46.4 60.0 32.2 62.5 26.2C65.1 20.1 67.1 16.6 68.6 14.1C70.1 11.5 70.1 12.0 71.6 11.0C73.2 10.0 76.2 8.5 77.7 8.0C79.2 7.5 79.2 7.5 80.7 8.0C82.2 8.5 85.3 9.5 86.8 11.0C88.3 12.5 89.3 15.1 89.8 17.1C90.3 19.1 90.3 19.6 89.8 23.2C89.3 26.7 88.3 32.2 86.8 38.3C85.3 44.4 81.7 54.5 80.7 59.5C79.7 64.6 80.2 66.6 80.7 68.6C81.2 70.6 82.7 71.1 83.8 71.6C84.8 72.1 85.3 72.1 86.8 71.6C88.3 71.1 91.3 69.6 92.8 68.6C94.4 67.6 94.4 67.6 95.9 65.6C97.4 63.6 100.9 58.0 101.9 56.5"/><path d="M129.2 53.5C128.7 52.4 127.7 48.9 126.2 47.4C124.7 45.9 122.1 44.9 120.1 44.4C118.1 43.9 116.1 43.9 114.1 44.4C112.0 44.9 109.5 46.4 108.0 47.4C106.5 48.4 106.0 48.9 105.0 50.4C104.0 51.9 102.4 54.5 101.9 56.5C101.4 58.5 101.4 60.5 101.9 62.5C102.4 64.6 103.5 67.1 105.0 68.6C106.5 70.1 109.0 71.1 111.0 71.6C113.1 72.1 115.1 72.1 117.1 71.6C119.1 71.1 121.6 70.1 123.2 68.6C124.7 67.1 124.7 66.6 126.2 62.5C127.7 58.5 131.7 44.9 132.2 44.4C132.7 43.9 129.7 55.5 129.2 59.5C128.7 63.6 128.7 66.6 129.2 68.6C129.7 70.6 131.2 71.1 132.2 71.6C133.3 72.1 133.8 72.1 135.3 71.6C136.8 71.1 139.8 69.6 141.3 68.6C142.8 67.6 141.8 69.1 144.4 65.6C146.9 62.0 152.9 52.9 156.5 47.4C160.0 41.8 163.6 35.8 165.6 32.2C167.6 28.7 167.6 28.7 168.6 26.2C169.6 23.7 171.1 19.6 171.6 17.1C172.1 14.6 172.1 12.5 171.6 11.0C171.1 9.5 170.1 8.0 168.6 8.0C167.1 8.0 164.1 9.5 162.5 11.0C161.0 12.5 160.5 14.1 159.5 17.1C158.5 20.1 157.5 23.7 156.5 29.2C155.5 34.8 154.0 43.9 153.5 50.4C152.9 57.0 152.9 65.1 153.5 68.6C154.0 72.1 155.5 71.1 156.5 71.6C157.5 72.1 158.0 72.1 159.5 71.6C161.0 71.1 164.1 69.6 165.6 68.6C167.1 67.6 167.1 67.6 168.6 65.6C170.1 63.6 173.7 58.0 174.7 56.5"/><path d="M174.7 56.5C175.7 54.5 180.7 43.4 180.7 44.4C180.7 45.4 175.7 58.5 174.7 62.5C173.7 66.6 174.2 67.1 174.7 68.6C175.2 70.1 176.7 71.1 177.7 71.6C178.7 72.1 179.2 72.1 180.7 71.6C182.2 71.1 185.3 69.6 186.8 68.6C188.3 67.6 187.3 69.1 189.8 65.6C192.3 62.0 198.4 52.9 201.9 47.4C205.5 41.8 209.0 35.8 211.0 32.2C213.1 28.7 213.1 28.7 214.1 26.2C215.1 23.7 216.6 19.6 217.1 17.1C217.6 14.6 217.6 12.5 217.1 11.0C216.6 9.5 215.6 8.0 214.1 8.0C212.5 8.0 209.5 9.5 208.0 11.0C206.5 12.5 206.0 14.1 205.0 17.1C204.0 20.1 202.9 24.2 201.9 29.2C200.9 34.3 199.9 40.3 198.9 47.4C197.9 54.5 195.9 69.1 195.9 71.6C195.9 74.2 197.9 65.1 198.9 62.5C199.9 60.0 200.4 59.0 201.9 56.5C203.5 54.0 206.0 49.4 208.0 47.4C210.0 45.4 212.0 44.9 214.1 44.4C216.1 43.9 218.6 43.9 220.1 44.4C221.6 44.9 222.6 45.9 223.2 47.4C223.7 48.9 224.2 51.9 223.2 53.5C222.1 55.0 219.6 56.0 217.1 56.5C214.6 57.0 208.5 56.0 208.0 56.5C207.5 57.0 212.5 57.5 214.1 59.5C215.6 61.5 216.1 66.6 217.1 68.6C218.1 70.6 219.1 71.1 220.1 71.6C221.1 72.1 221.6 72.1 223.2 71.6C224.7 71.1 227.7 69.6 229.2 68.6C230.7 67.6 230.7 67.6 232.2 65.6C233.8 63.6 237.3 58.0 238.3 56.5"/><path d="M247.4 44.4C246.4 45.4 242.8 47.9 241.3 50.4C239.8 52.9 238.8 57.0 238.3 59.5C237.8 62.0 237.8 63.6 238.3 65.6C238.8 67.6 239.8 70.6 241.3 71.6C242.8 72.6 245.4 72.1 247.4 71.6C249.4 71.1 251.4 70.1 253.5 68.6C255.5 67.1 258.5 63.6 259.5 62.5"/><path d="M265.6 44.4C264.6 47.4 260.5 58.5 259.5 62.5C258.5 66.6 259.0 67.1 259.5 68.6C260.0 70.1 261.0 71.1 262.5 71.6C264.1 72.1 266.6 72.1 268.6 71.6C270.6 71.1 272.6 70.1 274.7 68.6C276.7 67.1 279.2 65.1 280.7 62.5C282.2 60.0 283.3 56.5 283.8 53.5C284.3 50.4 283.3 43.9 283.8 44.4C284.3 44.9 285.8 54.0 286.8 56.5C287.8 59.0 288.3 59.0 289.8 59.5C291.3 60.0 293.9 60.0 295.9 59.5C297.9 59.0 300.9 57.0 301.9 56.5"/><path d="M329.2 53.5C328.7 52.4 327.7 48.9 326.2 47.4C324.7 45.9 322.1 44.9 320.1 44.4C318.1 43.9 316.1 43.9 314.1 44.4C312.0 44.9 309.5 46.4 308.0 47.4C306.5 48.4 306.0 48.9 305.0 50.4C304.0 51.9 302.4 54.5 301.9 56.5C301.4 58.5 301.4 60.5 301.9 62.5C302.4 64.6 303.5 67.1 305.0 68.6C306.5 70.1 309.0 71.1 311.0 71.6C313.1 72.1 315.1 72.1 317.1 71.6C319.1 71.1 321.6 70.1 323.2 68.6C324.7 67.1 324.7 66.6 326.2 62.5C327.7 58.5 331.7 44.9 332.2 44.4C332.7 43.9 329.7 55.5 329.2 59.5C328.7 63.6 328.7 66.6 329.2 68.6C329.7 70.6 331.2 71.1 332.2 71.6C333.3 72.1 333.8 72.1 335.3 71.6C336.8 71.1 339.8 69.6 341.3 68.6C342.8 67.6 341.8 69.1 344.4 65.6C346.9 62.0 352.9 52.9 356.5 47.4C360.0 41.8 363.6 35.8 365.6 32.2C367.6 28.7 367.6 28.7 368.6 26.2C369.6 23.7 371.1 19.6 371.6 17.1C372.1 14.6 372.1 12.5 371.6 11.0C371.1 9.5 370.1 8.0 368.6 8.0C367.1 8.0 364.1 9.5 362.5 11.0C361.0 12.5 360.5 14.1 359.5 17.1C358.5 20.1 357.5 23.7 356.5 29.2C355.5 34.8 354.0 43.9 353.5 50.4C352.9 57.0 352.9 65.1 353.5 68.6C354.0 72.1 355.5 71.1 356.5 71.6C357.5 72.1 358.0 72.1 359.5 71.6C361.0 71.1 364.1 69.6 365.6 68.6C367.1 67.6 367.1 67.6 368.6 65.6C370.1 63.6 373.7 58.0 374.7 56.5"/><path d="M377.7 65.6C378.7 65.1 382.2 63.6 383.8 62.5C385.3 61.5 385.8 61.0 386.8 59.5C387.8 58.0 389.3 55.5 389.8 53.5C390.3 51.4 390.3 48.9 389.8 47.4C389.3 45.9 387.8 44.9 386.8 44.4C385.8 43.9 385.3 43.9 383.8 44.4C382.2 44.9 379.2 45.9 377.7 47.4C376.2 48.9 375.2 50.9 374.7 53.5C374.2 56.0 374.2 60.0 374.7 62.5C375.2 65.1 376.2 67.1 377.7 68.6C379.2 70.1 381.7 71.1 383.8 71.6C385.8 72.1 387.8 72.1 389.8 71.6C391.8 71.1 394.4 69.6 395.9 68.6C397.4 67.6 397.4 67.6 398.9 65.6C400.4 63.6 404.0 58.0 405.0 56.5"/><path d="M408.0 65.6C409.0 65.1 412.5 63.6 414.1 62.5C415.6 61.5 416.1 61.0 417.1 59.5C418.1 58.0 419.6 55.5 420.1 53.5C420.6 51.4 420.6 48.9 420.1 47.4C419.6 45.9 418.1 44.9 417.1 44.4C416.1 43.9 415.6 43.9 414.1 44.4C412.5 44.9 409.5 45.9 408.0 47.4C406.5 48.9 405.5 50.9 405.0 53.5C404.5 56.0 404.5 60.0 405.0 62.5C405.5 65.1 406.5 67.1 408.0 68.6C409.5 70.1 412.0 71.1 414.1 71.6C416.1 72.1 418.1 72.1 420.1 71.6C422.1 71.1 424.7 69.6 426.2 68.6C427.7 67.6 427.7 67.6 429.2 65.6C430.7 63.6 434.3 58.0 435.3 56.5"/><path d="M462.5 53.5C462.0 52.4 461.0 48.9 459.5 47.4C458.0 45.9 455.5 44.9 453.5 44.4C451.4 43.9 449.4 43.9 447.4 44.4C445.4 44.9 442.8 46.4 441.3 47.4C439.8 48.4 439.3 48.9 438.3 50.4C437.3 51.9 435.8 54.5 435.3 56.5C434.8 58.5 434.8 60.5 435.3 62.5C435.8 64.6 436.8 67.1 438.3 68.6C439.8 70.1 442.3 71.1 444.4 71.6C446.4 72.1 448.4 72.1 450.4 71.6C452.4 71.1 455.0 70.1 456.5 68.6C458.0 67.1 456.0 72.6 459.5 62.5C463.1 52.4 474.7 17.1 477.7 8.0"/><path d="M465.6 44.4C465.1 46.9 463.1 55.5 462.5 59.5C462.0 63.6 462.0 66.6 462.5 68.6C463.1 70.6 464.6 71.1 465.6 71.6C466.6 72.1 467.1 72.1 468.6 71.6C470.1 71.1 473.2 69.6 474.7 68.6C476.2 67.6 476.2 67.6 477.7 65.6C479.2 63.6 482.7 58.0 483.8 56.5"/><path d="M183.8 29.2C183.8 29.7 183.3 31.7 183.8 32.2C184.3 32.7 186.3 32.7 186.8 32.2C187.3 31.7 187.3 29.7 186.8 29.2C186.3 28.7 184.3 29.2 183.8 29.2"/><circle class="sp-nib" r="4.6" cx="-20" cy="-20"></circle></svg>
-      </div>
+      <svg class="sp-scene" viewBox="0 0 580 460" aria-hidden="true">
+        <defs>
+          <radialGradient id="skinH" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#f0c3a0"/><stop offset=".55" stop-color="#d9a37d"/><stop offset="1" stop-color="#b57650"/></radialGradient>
+          <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34343f"/><stop offset=".5" stop-color="#1a1a23"/><stop offset="1" stop-color="#0e0e14"/></linearGradient>
+          <linearGradient id="pants" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#63636b"/><stop offset=".5" stop-color="#4a4a52"/><stop offset="1" stop-color="#37373e"/></linearGradient>
+          <radialGradient id="shoe" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfcfd6"/></radialGradient>
+          <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2d2a"/><stop offset=".5" stop-color="#1c1514"/><stop offset="1" stop-color="#0d0909"/></linearGradient>
+          <radialGradient id="ground" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#12121f" stop-opacity=".30"/><stop offset="1" stop-color="#12121f" stop-opacity="0"/></radialGradient>
+        </defs>
+        <g class="sp-write" transform="translate(60 232) scale(0.62)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.1 29.2C16.1 28.7 12.5 27.7 11.0 26.2C9.5 24.7 8.5 21.6 8.0 20.1C7.5 18.6 7.5 18.6 8.0 17.1C8.5 15.6 9.5 12.5 11.0 11.0C12.5 9.5 15.6 8.5 17.1 8.0C18.6 7.5 18.6 7.5 20.1 8.0C21.6 8.5 24.7 9.5 26.2 11.0C27.7 12.5 28.7 15.1 29.2 17.1C29.7 19.1 29.7 19.6 29.2 23.2C28.7 26.7 28.2 30.2 26.2 38.3C24.2 46.4 18.6 66.1 17.1 71.6"/><path d="M23.2 50.4C24.7 46.4 29.7 32.2 32.2 26.2C34.8 20.1 36.8 16.6 38.3 14.1C39.8 11.5 39.8 12.0 41.3 11.0C42.8 10.0 45.9 8.5 47.4 8.0C48.9 7.5 48.9 7.5 50.4 8.0C51.9 8.5 55.0 9.5 56.5 11.0C58.0 12.5 59.0 15.1 59.5 17.1C60.0 19.1 60.0 19.6 59.5 23.2C59.0 26.7 58.5 30.2 56.5 38.3C54.5 46.4 48.9 66.1 47.4 71.6"/><path d="M53.5 50.4C55.0 46.4 60.0 32.2 62.5 26.2C65.1 20.1 67.1 16.6 68.6 14.1C70.1 11.5 70.1 12.0 71.6 11.0C73.2 10.0 76.2 8.5 77.7 8.0C79.2 7.5 79.2 7.5 80.7 8.0C82.2 8.5 85.3 9.5 86.8 11.0C88.3 12.5 89.3 15.1 89.8 17.1C90.3 19.1 90.3 19.6 89.8 23.2C89.3 26.7 88.3 32.2 86.8 38.3C85.3 44.4 81.7 54.5 80.7 59.5C79.7 64.6 80.2 66.6 80.7 68.6C81.2 70.6 82.7 71.1 83.8 71.6C84.8 72.1 85.3 72.1 86.8 71.6C88.3 71.1 91.3 69.6 92.8 68.6C94.4 67.6 94.4 67.6 95.9 65.6C97.4 63.6 100.9 58.0 101.9 56.5"/><path d="M129.2 53.5C128.7 52.4 127.7 48.9 126.2 47.4C124.7 45.9 122.1 44.9 120.1 44.4C118.1 43.9 116.1 43.9 114.1 44.4C112.0 44.9 109.5 46.4 108.0 47.4C106.5 48.4 106.0 48.9 105.0 50.4C104.0 51.9 102.4 54.5 101.9 56.5C101.4 58.5 101.4 60.5 101.9 62.5C102.4 64.6 103.5 67.1 105.0 68.6C106.5 70.1 109.0 71.1 111.0 71.6C113.1 72.1 115.1 72.1 117.1 71.6C119.1 71.1 121.6 70.1 123.2 68.6C124.7 67.1 124.7 66.6 126.2 62.5C127.7 58.5 131.7 44.9 132.2 44.4C132.7 43.9 129.7 55.5 129.2 59.5C128.7 63.6 128.7 66.6 129.2 68.6C129.7 70.6 131.2 71.1 132.2 71.6C133.3 72.1 133.8 72.1 135.3 71.6C136.8 71.1 139.8 69.6 141.3 68.6C142.8 67.6 141.8 69.1 144.4 65.6C146.9 62.0 152.9 52.9 156.5 47.4C160.0 41.8 163.6 35.8 165.6 32.2C167.6 28.7 167.6 28.7 168.6 26.2C169.6 23.7 171.1 19.6 171.6 17.1C172.1 14.6 172.1 12.5 171.6 11.0C171.1 9.5 170.1 8.0 168.6 8.0C167.1 8.0 164.1 9.5 162.5 11.0C161.0 12.5 160.5 14.1 159.5 17.1C158.5 20.1 157.5 23.7 156.5 29.2C155.5 34.8 154.0 43.9 153.5 50.4C152.9 57.0 152.9 65.1 153.5 68.6C154.0 72.1 155.5 71.1 156.5 71.6C157.5 72.1 158.0 72.1 159.5 71.6C161.0 71.1 164.1 69.6 165.6 68.6C167.1 67.6 167.1 67.6 168.6 65.6C170.1 63.6 173.7 58.0 174.7 56.5"/><path d="M183.8 29.2C183.8 29.7 183.3 31.7 183.8 32.2C184.3 32.7 186.3 32.7 186.8 32.2C187.3 31.7 187.3 29.7 186.8 29.2C186.3 28.7 184.3 29.2 183.8 29.2"/><path d="M174.7 56.5C175.7 54.5 180.7 43.4 180.7 44.4C180.7 45.4 175.7 58.5 174.7 62.5C173.7 66.6 174.2 67.1 174.7 68.6C175.2 70.1 176.7 71.1 177.7 71.6C178.7 72.1 179.2 72.1 180.7 71.6C182.2 71.1 185.3 69.6 186.8 68.6C188.3 67.6 187.3 69.1 189.8 65.6C192.3 62.0 198.4 52.9 201.9 47.4C205.5 41.8 209.0 35.8 211.0 32.2C213.1 28.7 213.1 28.7 214.1 26.2C215.1 23.7 216.6 19.6 217.1 17.1C217.6 14.6 217.6 12.5 217.1 11.0C216.6 9.5 215.6 8.0 214.1 8.0C212.5 8.0 209.5 9.5 208.0 11.0C206.5 12.5 206.0 14.1 205.0 17.1C204.0 20.1 202.9 24.2 201.9 29.2C200.9 34.3 199.9 40.3 198.9 47.4C197.9 54.5 195.9 69.1 195.9 71.6C195.9 74.2 197.9 65.1 198.9 62.5C199.9 60.0 200.4 59.0 201.9 56.5C203.5 54.0 206.0 49.4 208.0 47.4C210.0 45.4 212.0 44.9 214.1 44.4C216.1 43.9 218.6 43.9 220.1 44.4C221.6 44.9 222.6 45.9 223.2 47.4C223.7 48.9 224.2 51.9 223.2 53.5C222.1 55.0 219.6 56.0 217.1 56.5C214.6 57.0 208.5 56.0 208.0 56.5C207.5 57.0 212.5 57.5 214.1 59.5C215.6 61.5 216.1 66.6 217.1 68.6C218.1 70.6 219.1 71.1 220.1 71.6C221.1 72.1 221.6 72.1 223.2 71.6C224.7 71.1 227.7 69.6 229.2 68.6C230.7 67.6 230.7 67.6 232.2 65.6C233.8 63.6 237.3 58.0 238.3 56.5"/><path d="M247.4 44.4C246.4 45.4 242.8 47.9 241.3 50.4C239.8 52.9 238.8 57.0 238.3 59.5C237.8 62.0 237.8 63.6 238.3 65.6C238.8 67.6 239.8 70.6 241.3 71.6C242.8 72.6 245.4 72.1 247.4 71.6C249.4 71.1 251.4 70.1 253.5 68.6C255.5 67.1 258.5 63.6 259.5 62.5"/><path d="M265.6 44.4C264.6 47.4 260.5 58.5 259.5 62.5C258.5 66.6 259.0 67.1 259.5 68.6C260.0 70.1 261.0 71.1 262.5 71.6C264.1 72.1 266.6 72.1 268.6 71.6C270.6 71.1 272.6 70.1 274.7 68.6C276.7 67.1 279.2 65.1 280.7 62.5C282.2 60.0 283.3 56.5 283.8 53.5C284.3 50.4 283.3 43.9 283.8 44.4C284.3 44.9 285.8 54.0 286.8 56.5C287.8 59.0 288.3 59.0 289.8 59.5C291.3 60.0 293.9 60.0 295.9 59.5C297.9 59.0 300.9 57.0 301.9 56.5"/><path d="M329.2 53.5C328.7 52.4 327.7 48.9 326.2 47.4C324.7 45.9 322.1 44.9 320.1 44.4C318.1 43.9 316.1 43.9 314.1 44.4C312.0 44.9 309.5 46.4 308.0 47.4C306.5 48.4 306.0 48.9 305.0 50.4C304.0 51.9 302.4 54.5 301.9 56.5C301.4 58.5 301.4 60.5 301.9 62.5C302.4 64.6 303.5 67.1 305.0 68.6C306.5 70.1 309.0 71.1 311.0 71.6C313.1 72.1 315.1 72.1 317.1 71.6C319.1 71.1 321.6 70.1 323.2 68.6C324.7 67.1 324.7 66.6 326.2 62.5C327.7 58.5 331.7 44.9 332.2 44.4C332.7 43.9 329.7 55.5 329.2 59.5C328.7 63.6 328.7 66.6 329.2 68.6C329.7 70.6 331.2 71.1 332.2 71.6C333.3 72.1 333.8 72.1 335.3 71.6C336.8 71.1 339.8 69.6 341.3 68.6C342.8 67.6 341.8 69.1 344.4 65.6C346.9 62.0 352.9 52.9 356.5 47.4C360.0 41.8 363.6 35.8 365.6 32.2C367.6 28.7 367.6 28.7 368.6 26.2C369.6 23.7 371.1 19.6 371.6 17.1C372.1 14.6 372.1 12.5 371.6 11.0C371.1 9.5 370.1 8.0 368.6 8.0C367.1 8.0 364.1 9.5 362.5 11.0C361.0 12.5 360.5 14.1 359.5 17.1C358.5 20.1 357.5 23.7 356.5 29.2C355.5 34.8 354.0 43.9 353.5 50.4C352.9 57.0 352.9 65.1 353.5 68.6C354.0 72.1 355.5 71.1 356.5 71.6C357.5 72.1 358.0 72.1 359.5 71.6C361.0 71.1 364.1 69.6 365.6 68.6C367.1 67.6 367.1 67.6 368.6 65.6C370.1 63.6 373.7 58.0 374.7 56.5"/><path d="M377.7 65.6C378.7 65.1 382.2 63.6 383.8 62.5C385.3 61.5 385.8 61.0 386.8 59.5C387.8 58.0 389.3 55.5 389.8 53.5C390.3 51.4 390.3 48.9 389.8 47.4C389.3 45.9 387.8 44.9 386.8 44.4C385.8 43.9 385.3 43.9 383.8 44.4C382.2 44.9 379.2 45.9 377.7 47.4C376.2 48.9 375.2 50.9 374.7 53.5C374.2 56.0 374.2 60.0 374.7 62.5C375.2 65.1 376.2 67.1 377.7 68.6C379.2 70.1 381.7 71.1 383.8 71.6C385.8 72.1 387.8 72.1 389.8 71.6C391.8 71.1 394.4 69.6 395.9 68.6C397.4 67.6 397.4 67.6 398.9 65.6C400.4 63.6 404.0 58.0 405.0 56.5"/><path d="M408.0 65.6C409.0 65.1 412.5 63.6 414.1 62.5C415.6 61.5 416.1 61.0 417.1 59.5C418.1 58.0 419.6 55.5 420.1 53.5C420.6 51.4 420.6 48.9 420.1 47.4C419.6 45.9 418.1 44.9 417.1 44.4C416.1 43.9 415.6 43.9 414.1 44.4C412.5 44.9 409.5 45.9 408.0 47.4C406.5 48.9 405.5 50.9 405.0 53.5C404.5 56.0 404.5 60.0 405.0 62.5C405.5 65.1 406.5 67.1 408.0 68.6C409.5 70.1 412.0 71.1 414.1 71.6C416.1 72.1 418.1 72.1 420.1 71.6C422.1 71.1 424.7 69.6 426.2 68.6C427.7 67.6 427.7 67.6 429.2 65.6C430.7 63.6 434.3 58.0 435.3 56.5"/><path d="M462.5 53.5C462.0 52.4 461.0 48.9 459.5 47.4C458.0 45.9 455.5 44.9 453.5 44.4C451.4 43.9 449.4 43.9 447.4 44.4C445.4 44.9 442.8 46.4 441.3 47.4C439.8 48.4 439.3 48.9 438.3 50.4C437.3 51.9 435.8 54.5 435.3 56.5C434.8 58.5 434.8 60.5 435.3 62.5C435.8 64.6 436.8 67.1 438.3 68.6C439.8 70.1 442.3 71.1 444.4 71.6C446.4 72.1 448.4 72.1 450.4 71.6C452.4 71.1 455.0 70.1 456.5 68.6C458.0 67.1 456.0 72.6 459.5 62.5C463.1 52.4 474.7 17.1 477.7 8.0"/><path d="M465.6 44.4C465.1 46.9 463.1 55.5 462.5 59.5C462.0 63.6 462.0 66.6 462.5 68.6C463.1 70.6 464.6 71.1 465.6 71.6C466.6 72.1 467.1 72.1 468.6 71.6C470.1 71.1 473.2 69.6 474.7 68.6C476.2 67.6 476.2 67.6 477.7 65.6C479.2 63.6 482.7 58.0 483.8 56.5"/></g>
+        <g class="ch">
+          <ellipse cx="130" cy="437" rx="92" ry="11" fill="url(#ground)"/>
+          <g class="ch-legL"><path d="M90 336 L122 336 L120 414 L92 414 Z" fill="url(#pants)"/><path d="M106 346 L110 408" stroke="#7a7a83" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/><path d="M84 412 Q84 402 100 402 L120 402 Q126 404 126 414 L126 428 Q126 436 114 436 L90 436 Q80 436 80 428 Z" fill="url(#shoe)"/><path d="M80 428 L126 428" stroke="#b9b9c2" stroke-width="3" stroke-linecap="round"/></g>
+          <g class="ch-legR"><path d="M138 336 L170 336 L168 414 L140 414 Z" fill="url(#pants)"/><path d="M154 346 L150 408" stroke="#2b2b31" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/><path d="M134 414 Q134 404 140 402 L160 402 Q176 402 176 412 L180 428 Q180 436 170 436 L146 436 Q134 436 134 428 Z" fill="url(#shoe)"/><path d="M134 428 L180 428" stroke="#b9b9c2" stroke-width="3" stroke-linecap="round"/></g>
+          <path d="M182 256 L194 298" stroke="#17171f" stroke-width="28" stroke-linecap="round"/>
+          <path d="M194 298 L192 336" stroke="#d09a74" stroke-width="19" stroke-linecap="round"/>
+          <circle cx="191" cy="346" r="12" fill="#d9a37d"/>
+          <g class="ch-torso">
+            <path d="M74 252 Q74 234 92 232 L168 232 Q186 234 186 252 L190 330 Q190 346 174 348 L86 348 Q70 346 70 330 Z" fill="url(#shirt)"/>
+            <path d="M84 250 Q82 270 80 312" stroke="#4a4a58" stroke-opacity=".45" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M118 232 L130 262 L142 232 Z" fill="#c68c64"/>
+            <path d="M102 233 L119 233 L130 264 L110 250 Z" fill="#202029" stroke="#d94b45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M158 233 L141 233 L130 264 L150 250 Z" fill="#202029" stroke="#d94b45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M130 264 L130 304" stroke="#09090d" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="130" cy="276" r="2.6" fill="#55556a"/><circle cx="130" cy="292" r="2.6" fill="#55556a"/>
+          </g>
+          <path d="M117 208 L143 208 L145 240 L115 240 Z" fill="#c68c64"/>
+          <path d="M117 224 Q130 236 143 224 L143 240 L117 240 Z" fill="#a8704b" fill-opacity=".55"/>
+          <g class="ch-arm">
+            <line class="a-sleeve" stroke="#17171f" stroke-width="28" stroke-linecap="round"/>
+            <line class="a-upper" stroke="#d09a74" stroke-width="20" stroke-linecap="round"/>
+            <line class="a-fore" stroke="#d09a74" stroke-width="19" stroke-linecap="round"/>
+            <line class="a-pen" stroke="#e8b84a" stroke-width="5" stroke-linecap="round"/>
+            <line class="a-nib" stroke="#12121f" stroke-width="5" stroke-linecap="round"/>
+            <circle class="a-hand" r="12.5" fill="#d9a37d"/>
+            <circle cx="78" cy="254" r="15" fill="#17171f"/>
+          </g>
+          <g class="ch-head">
+            <ellipse cx="60" cy="158" rx="11" ry="15" fill="#c98f68"/><ellipse cx="200" cy="158" rx="11" ry="15" fill="#c98f68"/>
+            <ellipse cx="61" cy="159" rx="5" ry="8" fill="#a8704b" fill-opacity=".6"/><ellipse cx="199" cy="159" rx="5" ry="8" fill="#a8704b" fill-opacity=".6"/>
+            <ellipse cx="130" cy="152" rx="71" ry="68" fill="url(#skinH)"/>
+            <path d="M58 142 Q50 98 82 84 Q96 66 122 72 Q138 56 160 72 Q190 70 200 100 Q212 122 202 144 Q196 118 178 108 Q160 118 146 104 Q128 118 112 106 Q94 112 84 128 Q72 126 66 148 Z" fill="url(#hair)"/>
+            <path d="M86 90 Q104 76 124 80" stroke="#5a4640" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M150 78 Q172 76 186 94" stroke="#5a4640" stroke-opacity=".6" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M70 108 Q62 118 62 132" stroke="#5a4640" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M92 126 Q106 116 122 124" stroke="#1b1413" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M138 124 Q154 116 168 126" stroke="#1b1413" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <g class="ch-eye" data-cx="106" data-cy="146"><ellipse cx="106" cy="146" rx="14" ry="15" fill="#fff"/><circle class="ch-pupil" data-x="106" data-y="147" cx="106" cy="147" r="8" fill="#2a1a14"/><circle class="ch-glint" data-x="103" data-y="143" cx="103" cy="143" r="2.6" fill="#fff"/></g>
+            <g class="ch-eye" data-cx="154" data-cy="146"><ellipse cx="154" cy="146" rx="14" ry="15" fill="#fff"/><circle class="ch-pupil" data-x="154" data-y="147" cx="154" cy="147" r="8" fill="#2a1a14"/><circle class="ch-glint" data-x="151" data-y="143" cx="151" cy="143" r="2.6" fill="#fff"/></g>
+            <path d="M126 160 Q130 168 136 162" stroke="#a8704b" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse cx="88" cy="172" rx="11" ry="7" fill="#e07a63" fill-opacity=".28"/><ellipse cx="172" cy="172" rx="11" ry="7" fill="#e07a63" fill-opacity=".28"/>
+            <path d="M110 180 Q130 200 150 180 Q130 186 110 180 Z" fill="#7a2f2a" stroke="#7a2f2a" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M116 184 Q130 191 144 184 Q130 187 116 184 Z" fill="#fff"/>
+          </g>
+        </g>
+        <circle class="sp-nib" r="3.4" cx="-20" cy="-20"></circle>
+      </svg>
       <div class="sp-bar" aria-hidden="true"><span></span></div>
       <p class="sp-pct" aria-hidden="true"><b>0</b>%</p>
     </div>
@@ -96,23 +139,31 @@
         if (!el) return;
         var bar = el.querySelector('.sp-bar span');
         var num = el.querySelector('.sp-pct b');
-        var svg = el.querySelector('.sp-write');
+        var svg = el.querySelector('.sp-scene');
         var nib = el.querySelector('.sp-nib');
+        var q = function (s) { return svg.querySelector(s); };
         var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var seen = false;
         try { seen = !!sessionStorage.getItem('wa-splash'); } catch (e) {}
-        var animate = !reduce && !seen; // first visit: the name is written by hand; later: shown at once
-        var WRITE_DELAY = 250; // pause before the pen touches down (ms)
-        var WRITE_MS = 1900; // time to write the whole name (ms)
-        var GAP = 40; // pen-lift pause between strokes (ms)
-        var MIN = animate ? WRITE_DELAY + WRITE_MS + 500 : reduce ? 300 : 700; // shortest time the screen stays (ms)
-        var MAX = 5000; // never keep the visitor waiting longer than this (ms)
-        var FRAMES = 36; // hero frames warmed up while loading
+        var animate = !reduce && !seen; // first visit: the character writes the name; later visits: finished picture
+
+        // ---- Timing (ms)
+        var WRITE_DELAY = 450; // hand rises to the start point
+        var WRITE_MS = 1900;   // time to write the whole name
+        var GAP = 40;          // pen-lift pause between strokes
+        var MIN = animate ? 0 : reduce ? 300 : 700; // shortest time the screen stays (set below when animating)
+        var MAX = 5000;        // never keep the visitor waiting longer than this
+        var FRAMES = 36;       // hero frames warmed up while loading
+
+        // ---- Geometry (scene units). Name placement must match the <g class="sp-write"> transform.
+        var NX = 60, NY = 232, NS = 0.62;
+        var SX = 78, SY = 254;      // shoulder of the writing arm (body-local)
+        var L1 = 52, L2 = 50;       // upper arm, forearm
+        var HAND = { x: 16, y: -24 }; // hand position relative to the pen tip
+        var REST = { x: -10, y: 92 }; // resting hand relative to the shoulder
+        var FOLLOW = -23;           // body offset = pen x + FOLLOW (keeps the pen just left of the body)
+
         var started = Date.now();
-        var writeStart = started + WRITE_DELAY;
-        var writeEnd = 0;
-        var writeDone = !animate;
-        var plan = [];
         var finished = false;
         var loadDone = document.readyState === 'complete';
         var fontsDone = false;
@@ -120,48 +171,160 @@
         var shown = 0;
         var keep = [];
 
-        // The page behind must not scroll while the screen is up
         function stop(e) { if (e.cancelable) e.preventDefault(); }
         el.addEventListener('wheel', stop, { passive: false });
         el.addEventListener('touchmove', stop, { passive: false });
 
-        // ---- Handwriting: each stroke is drawn by its length, the nib follows the pen tip
-        var strokes = svg ? Array.prototype.slice.call(svg.querySelectorAll('path')) : [];
+        // ---- Handwriting plan: every stroke is drawn by its length
+        var strokes = Array.prototype.slice.call(svg.querySelectorAll('.sp-write path'));
+        var plan = [], writeEnd = 0, tipStart = { x: NX, y: NY }, tipEnd = { x: NX, y: NY };
+        function toScene(p, pt) { return { x: NX + NS * pt.x, y: NY + NS * pt.y }; }
         try {
-          var total = 0, lens = [], i;
-          for (i = 0; i < strokes.length; i++) { lens[i] = strokes[i].getTotalLength(); total += lens[i]; }
-          var drawMs = WRITE_MS - GAP * (strokes.length - 1), t = 0;
+          var total = 0, lens = [], i, gaps = [], pts = [], gapSum = 0;
+          for (i = 0; i < strokes.length; i++) {
+            lens[i] = strokes[i].getTotalLength(); total += lens[i];
+            pts[i] = { a: toScene(null, strokes[i].getPointAtLength(0)), b: toScene(null, strokes[i].getPointAtLength(lens[i])) };
+          }
+          for (i = 0; i < strokes.length - 1; i++) {
+            // pen-up travel to the next stroke takes time in proportion to the distance
+            var jx = pts[i + 1].a.x - pts[i].b.x, jy = pts[i + 1].a.y - pts[i].b.y;
+            gaps[i] = clamp(Math.sqrt(jx * jx + jy * jy) / 1.1, GAP, 170);
+            gapSum += gaps[i];
+          }
+          var drawMs = WRITE_MS - gapSum, t = 0;
           for (i = 0; i < strokes.length; i++) {
             var dur = Math.max(110, drawMs * lens[i] / total);
-            plan.push({ p: strokes[i], len: lens[i], start: t, dur: dur });
-            t += dur + GAP;
+            plan.push({ p: strokes[i], len: lens[i], start: t, dur: dur, a: pts[i].a, b: pts[i].b });
+            t += dur + (i < strokes.length - 1 ? gaps[i] : 0);
             strokes[i].style.strokeDasharray = lens[i];
             strokes[i].style.strokeDashoffset = animate ? lens[i] : 0;
           }
           writeEnd = t;
-          if (animate) MIN = WRITE_DELAY + writeEnd + 500; // hold the finished name for half a second
+          tipStart = pts[0].a;
+          tipEnd = pts[strokes.length - 1].b;
+          if (animate) MIN = WRITE_DELAY + writeEnd + 700; // hold the finished picture a moment
         } catch (err) {
-          writeDone = true;
+          plan = []; animate = false; MIN = 700;
           for (var k = 0; k < strokes.length; k++) { strokes[k].style.strokeDasharray = ''; strokes[k].style.strokeDashoffset = ''; }
         }
+        var writeStart = started + WRITE_DELAY;
+        var DX0 = tipStart.x + FOLLOW - 0; // body offset at the start
 
-        function paintWrite(now) {
-          if (writeDone) return;
-          var e = now - writeStart, last = null, f, j;
-          for (j = 0; j < plan.length; j++) {
-            f = Math.min(1, Math.max(0, (e - plan[j].start) / plan[j].dur));
-            plan[j].p.style.strokeDashoffset = plan[j].len * (1 - f);
-            if (f > 0) last = { s: plan[j], f: f };
+        // ---- Character parts
+        var ch = q('.ch'), head = q('.ch-head'), legL = q('.ch-legL'), legR = q('.ch-legR');
+        var aSleeve = q('.a-sleeve'), aUpper = q('.a-upper'), aFore = q('.a-fore'), aPen = q('.a-pen'), aNib = q('.a-nib'), aHand = q('.a-hand');
+        var eyes = Array.prototype.slice.call(svg.querySelectorAll('.ch-eye'));
+        var pupils = Array.prototype.slice.call(svg.querySelectorAll('.ch-pupil, .ch-glint'));
+
+        function ease(x) { return x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x); }
+        function clamp(x, a, b) { return x < a ? a : x > b ? b : x; }
+        function line(l, x1, y1, x2, y2) {
+          l.setAttribute('x1', x1.toFixed(1)); l.setAttribute('y1', y1.toFixed(1));
+          l.setAttribute('x2', x2.toFixed(1)); l.setAttribute('y2', y2.toFixed(1));
+        }
+
+        // Two-bone arm: find the elbow so both bones keep their length (the hand is clamped to the reach)
+        function arm(hx, hy) {
+          var dxs = hx - SX, dys = hy - SY, d = Math.sqrt(dxs * dxs + dys * dys) || 0.001;
+          var maxd = L1 + L2 - 0.5, mind = Math.abs(L1 - L2) + 0.5;
+          if (d > maxd) { hx = SX + dxs / d * maxd; hy = SY + dys / d * maxd; d = maxd; }
+          else if (d < mind) { hx = SX + dxs / d * mind; hy = SY + dys / d * mind; d = mind; }
+          var ux = (hx - SX) / d, uy = (hy - SY) / d;
+          var a = (L1 * L1 - L2 * L2 + d * d) / (2 * d), h = Math.sqrt(Math.max(0, L1 * L1 - a * a));
+          var c1 = { x: SX + ux * a - uy * h, y: SY + uy * a + ux * h };
+          var c2 = { x: SX + ux * a + uy * h, y: SY + uy * a - ux * h };
+          var e = (-c1.x * 0.6 + c1.y * 0.8) >= (-c2.x * 0.6 + c2.y * 0.8) ? c1 : c2; // elbow down and outward
+          return { ex: e.x, ey: e.y, hx: hx, hy: hy };
+        }
+
+        // ---- State
+        var dx = animate ? DX0 : tipEnd.x + FOLLOW;
+        var lastNow = Date.now(), phase = 0, amp = 0;
+        var nextBlink = lastNow + 1200, blinkAt = -1;
+        var tip = { x: animate ? tipStart.x : tipEnd.x, y: animate ? tipStart.y : tipEnd.y };
+
+        function pose(now, dt) {
+          // 1) where is the pen, and is it on the paper?
+          var e = now - writeStart, down = false, lift = 0, j, f;
+          if (animate && plan.length) {
+            for (j = 0; j < plan.length; j++) {
+              f = clamp((e - plan[j].start) / plan[j].dur, 0, 1);
+              plan[j].p.style.strokeDashoffset = plan[j].len * (1 - f);
+            }
+            if (e <= 0) { tip = plan[0].a; }
+            else if (e >= writeEnd) { tip = plan[plan.length - 1].b; lift = 1; }
+            else {
+              for (j = 0; j < plan.length; j++) {
+                var s0 = plan[j].start, s1 = s0 + plan[j].dur;
+                if (e >= s0 && e <= s1) {
+                  down = true;
+                  tip = toScene(null, plan[j].p.getPointAtLength(plan[j].len * (e - s0) / plan[j].dur));
+                  break;
+                }
+                if (j < plan.length - 1 && e > s1 && e < plan[j + 1].start) {
+                  var gp = (e - s1) / (plan[j + 1].start - s1), gk = ease(gp);
+                  tip = { x: plan[j].b.x + (plan[j + 1].a.x - plan[j].b.x) * gk, y: plan[j].b.y + (plan[j + 1].a.y - plan[j].b.y) * gk };
+                  lift = Math.sin(Math.PI * gp);
+                  break;
+                }
+              }
+            }
           }
-          if (last && nib) {
-            var pt = last.s.p.getPointAtLength(last.s.len * last.f);
-            nib.setAttribute('cx', pt.x.toFixed(1));
-            nib.setAttribute('cy', pt.y.toFixed(1));
-            nib.style.opacity = '1';
+          var blend = !animate ? 0 : e < 0 ? ease((e + WRITE_DELAY) / WRITE_DELAY) : e > writeEnd ? ease(1 - (e - writeEnd) / 450) : 1;
+
+          // nib = the ink point, only while the pen touches
+          if (nib) {
+            nib.setAttribute('cx', tip.x.toFixed(1)); nib.setAttribute('cy', tip.y.toFixed(1));
+            nib.style.opacity = animate && down ? '1' : '0';
           }
-          if (e >= writeEnd) {
-            writeDone = true;
-            if (nib) nib.style.opacity = '0';
+
+          // 2) the body follows the pen to the right, taking steps
+          var k = 1 - Math.exp(-dt * 12);
+          var prev = dx;
+          if (animate && e > -WRITE_DELAY / 2 && e < writeEnd + 200) dx = Math.max(dx, dx + (tip.x + FOLLOW - dx) * k);
+          var moved = dx - prev;
+          phase += moved * 0.12;
+          amp += ((dt > 0 && moved / dt > 8 ? 1 : 0) - amp) * (1 - Math.exp(-dt * 10));
+          var bob = -Math.abs(Math.sin(phase)) * 3.2 * amp - Math.sin(now / 520) * 0.8;
+          var swing = 17 * amp * Math.sin(phase);
+          ch.setAttribute('transform', 'translate(' + dx.toFixed(1) + ' ' + bob.toFixed(1) + ')');
+          legL.setAttribute('transform', 'rotate(' + swing.toFixed(1) + ' 106 340)');
+          legR.setAttribute('transform', 'rotate(' + (-swing).toFixed(1) + ' 154 340)');
+
+          // 3) arm: the hand follows the pen tip (body-local coordinates)
+          var tx = tip.x - dx, ty = tip.y - bob;
+          var workX = tx + HAND.x, workY = ty + HAND.y - lift * 14;
+          var restX = SX + REST.x, restY = SY + REST.y;
+          var hx = restX + (workX - restX) * blend, hy = restY + (workY - restY) * blend;
+          var a = arm(hx, hy);
+          var mx = SX + (a.ex - SX) * 0.55, my = SY + (a.ey - SY) * 0.55;
+          line(aSleeve, SX, SY, mx, my);
+          line(aUpper, mx, my, a.ex, a.ey);
+          line(aFore, a.ex, a.ey, a.hx, a.hy);
+          aHand.setAttribute('cx', a.hx.toFixed(1)); aHand.setAttribute('cy', a.hy.toFixed(1));
+          // pen: from behind the fist down to the tip (only while the arm is working)
+          var penOn = blend > 0.35;
+          var px = a.hx + 7, py = a.hy - 10;
+          var tipX = penOn ? tx : a.hx - 6, tipY = penOn ? ty - lift * 14 : a.hy + 20;
+          var pdx = tipX - px, pdy = tipY - py, pl = Math.sqrt(pdx * pdx + pdy * pdy) || 1;
+          line(aPen, px, py, tipX - pdx / pl * 7, tipY - pdy / pl * 7);
+          line(aNib, tipX - pdx / pl * 7, tipY - pdy / pl * 7, tipX, tipY);
+          aPen.style.opacity = aNib.style.opacity = penOn ? '1' : '0';
+
+          // 4) head and eyes look at the pen; blinking
+          var look = clamp((tip.x - (130 + dx)) / 110, -1, 0.4);
+          var lookY = clamp((tip.y - 146) / 80, -0.3, 1);
+          head.setAttribute('transform', 'rotate(' + (look * 6).toFixed(1) + ' 130 222)');
+          for (var m = 0; m < pupils.length; m++) {
+            pupils[m].setAttribute('cx', (parseFloat(pupils[m].getAttribute('data-x')) + look * 5).toFixed(1));
+            pupils[m].setAttribute('cy', (parseFloat(pupils[m].getAttribute('data-y')) + lookY * 3.5).toFixed(1));
+          }
+          var sy = 1;
+          if (now >= nextBlink) { blinkAt = now; nextBlink = now + 2300 + Math.random() * 1800; }
+          if (blinkAt > 0 && now - blinkAt < 140) sy = Math.max(0.08, 1 - Math.sin(Math.PI * (now - blinkAt) / 140));
+          for (var n2 = 0; n2 < eyes.length; n2++) {
+            var cx = eyes[n2].getAttribute('data-cx'), cy = eyes[n2].getAttribute('data-cy');
+            eyes[n2].setAttribute('transform', 'translate(' + cx + ' ' + cy + ') scale(1 ' + sy.toFixed(2) + ') translate(-' + cx + ' -' + cy + ')');
           }
         }
 
@@ -179,11 +342,11 @@
         }
 
         function count() { frames++; }
-        for (var n = 2; n <= FRAMES; n++) {
+        for (var nn = 2; nn <= FRAMES; nn++) {
           var im = new Image();
           im.onload = count;
           im.onerror = count;
-          im.src = '/hero/desktop/frame-' + ('00' + n).slice(-3) + '.webp';
+          im.src = '/hero/desktop/frame-' + ('00' + nn).slice(-3) + '.webp';
           keep.push(im);
         }
 
@@ -195,7 +358,7 @@
           if (finished) return;
           finished = true;
           try { sessionStorage.setItem('wa-splash', '1'); } catch (e) {}
-          for (var m = 0; m < plan.length; m++) plan[m].p.style.strokeDashoffset = 0; // never leave the name half written
+          for (var m2 = 0; m2 < plan.length; m2++) plan[m2].p.style.strokeDashoffset = 0; // never leave the name half written
           if (nib) nib.style.opacity = '0';
           if (bar) bar.style.transform = 'scaleX(1)';
           if (num) num.textContent = '100';
@@ -204,15 +367,19 @@
           setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 800);
         }
 
+        pose(started, 0.016); // first picture before the first frame is painted
+
         function tick() {
           if (finished) return;
-          paintWrite(Date.now());
+          var now = Date.now(), dt = Math.min(0.05, (now - lastNow) / 1000);
+          lastNow = now;
+          if (!reduce) pose(now, dt);
           var tg = target();
           shown += (tg - shown) * 0.1;
           if (tg >= 1 && shown > 0.985) shown = 1;
           if (bar) bar.style.transform = 'scaleX(' + shown.toFixed(3) + ')';
           if (num) num.textContent = Math.round(shown * 100);
-          var elapsed = Date.now() - started;
+          var elapsed = now - started;
           if ((shown >= 1 && elapsed >= MIN) || elapsed >= MAX) finish();
           else requestAnimationFrame(tick);
         }
